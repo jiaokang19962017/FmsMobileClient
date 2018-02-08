@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<script src="../js/mui.js"></script>
+	</head>
+
+	<body>
+		 <header class="mui-bar mui-bar-nav">
+		      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>
+		      <h1 class="mui-title">个人中心</h1>
+		    </header>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){   
+//				侧滑加滚动
+				mui(".mui-scroll-wrapper").scroll({
+				deceleration : 0.0005
+				});
+			})
+		</script>
+	</body>
+
+</html>

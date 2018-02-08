@@ -1,0 +1,41 @@
+{
+  "childrenPage/fmsMainPage.html": {
+    "href": "childrenPage/fmsMainPage.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js"
+    ],
+    "priority": 0
+  },
+  "childrenPage/customerRecord.html": {
+    "href": "childrenPage/customerRecord.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js"
+    ],
+    "priority": 1
+  },
+  "childrenPage/myCenter.html": {
+    "href": "childrenPage/myCenter.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js"
+    ],
+    "priority": 2
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/mui.min.css",
+      "fonts/mui.ttf",
+      "css/iconfont.css",
+      "fonts/iconfont.ttf",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}

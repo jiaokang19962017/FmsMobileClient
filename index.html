@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		
+		<div class="mui-content">
+			<nav id="bar" class="mui-bar mui-bar-tab">
+			    <a class="mui-tab-item mui-active" href="childrenPage/fmsMainPage.html" data-id="fmsMainPage">
+			        <span class="mui-icon iconfont icon-homepage"></span>
+			        <span class="mui-tab-label">随访首页</span>
+			    </a>
+			    <a class="mui-tab-item" href="childrenPage/customerRecord.html" data-id="customerRecord">
+			        <span class="mui-icon iconfont icon-like"></span>
+			        <span class="mui-tab-label">我的患者</span>
+			    </a>
+			    <a class="mui-tab-item" href="childrenPage/myCenter.html" data-id="myCenter">
+			        <span class="mui-icon iconfont icon-mine"></span>
+			        <span class="mui-tab-label">个人中心</span>
+			    </a>
+			</nav>
+		</div>
+		   
+		    
+		
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function(){
+			 var self = plus.webview.currentWebview();
+			 var current = '';
+			 var styles = {
+                    top: '0',
+                    bottom: '51px'
+                };
+             var tabsConfig = {
+                    fmsMainPage: {
+                        url: 'childrenPage/fmsMainPage.html',
+                        styles: styles,
+                        default:true
+                    },
+                    customerRecord: {
+                        url: 'childrenPage/customerRecord.html',
+                        styles: styles
+                    },
+                    myCenter: {
+                        url: 'childrenPage/myCenter.html',
+                        styles: styles
+                    }
+                };
+                 var tabs = {};
+                for (id in tabsConfig) {
+                    tabs[id] = plus.webview.create(tabsConfig[id].url, id, tabsConfig[id].styles);
+                    if (tabsConfig[id]['default']) {
+                        self.append(tabs[id]);
+                        current = id;
+                    }
+                }
+                 mui('#bar').on('tap', 'a', function(e) {
+                    if (current == this.dataset.id) {
+                        return;
+                    }
+                    tabs[this.dataset.id].show();
+                    tabs[current].hide();
+                    current = this.dataset.id;
+                });
+			})
+		</script>
+	</body>
+
+</html>

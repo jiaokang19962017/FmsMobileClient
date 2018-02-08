@@ -1,0 +1,46 @@
+{
+  "index.html": {
+    "refer": [
+      "AboutMe/aboutMe.html",
+      "ScreenPage/HospitalScreen.html",
+      "ajax.html",
+      "AjaxServlet.html",
+      "childrenPage/myCenter.html",
+      "childrenPage/customerRecord.html",
+      "childrenPage/fmsMainPage.html"
+    ],
+    "resources": [
+      "childrenPage/fmsMainPage.html",
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "js/mui.min.js"
+    ]
+  },
+  "childrenPage/fmsMainPage.html": {
+    "href": "childrenPage/fmsMainPage.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "childrenPage/customerRecord.html": {
+    "href": "childrenPage/customerRecord.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "childrenPage/myCenter.html": {
+    "href": "childrenPage/myCenter.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}
