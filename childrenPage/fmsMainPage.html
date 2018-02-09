@@ -106,7 +106,7 @@
 		      <div class="mui-scroll">
 		        <!-- 主界面具体展示内容 -->
 		        <div class="mui-content">
-			<ul id="OA_task_2" class="mui-table-view" style="margin-top: 0px;margin-right: 0px;">
+			<ul id="OA_task_1" class="mui-table-view" style="margin-top: 0px;margin-right: 0px;">
 			        <li class="mui-table-view-cell">
 			            <a class="mui-navigate-right">
 			                吴桂芳
@@ -142,7 +142,7 @@
 					</div>
 					<div class="mui-slider-handle mui-table">
 						<div class="mui-table-cell" style="color: orangered;">
-							左滑自动触发删除
+							左滑触发删除
 						</div>
 
 					</div>
@@ -304,18 +304,20 @@
 			
 			})
 			(function($) {
-				var btnArray = ['确认', '取消'];
-				$('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
+				btnArray=["确定","取消"]
+				$('#OA_task_1').on('tap', '.mui-btn', function(event) {
 					var elem = this;
+					var li = elem.parentNode.parentNode;
 					mui.confirm('确认删除该条记录？', '警告', btnArray, function(e) {
 						if (e.index == 0) {
-							elem.parentNode.removeChild(elem);
+							li.parentNode.removeChild(li);
 						} else {
 							setTimeout(function() {
-								$.swipeoutClose(elem);
-							}, 100); //点击取消时
+								$.swipeoutClose(li);
+							}, 0);
 						}
 					});
+			
 				});
 			var offCanvasWrapper = mui('#offCanvasWrapper');
 			document.getElementById('offCanvasHide').addEventListener('tap', function() {

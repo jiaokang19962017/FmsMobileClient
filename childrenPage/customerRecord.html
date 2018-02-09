@@ -16,27 +16,28 @@
 			mui.init()
 		</script>
 		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">我的患者</h1>
+			<h1 class="mui-title">数据分析</h1>
 		</header>
 		 <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-    <div id="main" class="mui-content" style="width: 100%;height:400px;">
-    	
-    </div>
+    <div id="main" class="mui-content" style="width: 100%;height:400px;"></div>
+    <div id="main1" class="mui-content" style="width: 100%;height: 400px;"></div>
+    <div class="mui-content" id="main2" style="width: 100%;height: 400px;"></div>
     <script type="text/javascript">
     	// 基于准备好的dom，初始化echarts实例
-    	var myChart = echarts.init(document.getElementById('main'),'vintage'); 
+    	var myChart = echarts.init(document.getElementById('main'),"vintage");
+    	var myChart1=echarts.init(document.getElementById('main1'),"vintage");
+    	var myChart2=echarts.init(document.getElementById('main2'),"vintage");
     	// 指定图表的配置项和数据
     	 var arrCount = [500, 2000, 3600, 1000];  
         var option = {
             title: {
-                text: 'ECharts能力展示'
+                text: '柱状图能力展示'
             },
             tooltip: {},
             legend: {
                 data:['随访人次']
             },
             xAxis: {
-            	type : 'category',
                 data: ["一季度","二季度","三季度","四季度"]
             },
             yAxis: {},
@@ -46,9 +47,64 @@
                 data: arrCount
             }]
         };
-
-        // 使用刚指定的配置项和数据显示图表。
+        var option1={
+        	title: {
+                text: '折线图能力展示'
+            },
+        	 xAxis: {
+        type: 'category',
+        data: ["一季度","二季度","三季度","四季度"]
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: arrCount,
+        type: 'line',
+        smooth: true
+    }]
+        };
+		var option2={
+			 title : {
+        text: '饼图能力展示',
+        subtext: '随访人数分析',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['第一季度','第二季度','第三季度','第四季度']
+    },
+    series : [
+        {
+            name: '随访人数占比',
+            type: 'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:500, name:'第一季度'},
+                {value:2000, name:'第二季度'},
+                {value:3600, name:'第三季度'},
+                {value:1000, name:'第四季度'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+		}
+		// 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        myChart1.setOption(option1);
+        myChart2.setOption(option2);
     </script>
 	</body>
 
