@@ -11,17 +11,26 @@
 
 	<body>
 		 <header class="mui-bar mui-bar-nav">
-		      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide"></a>
 		      <h1 class="mui-title">个人中心</h1>
 		    </header>
+		    <div class="mui-content">
+		    	<form  id='login-form' class="mui-input-group">
+		    		<div class="mui-input-row">
+		    			<label>账号</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+		    		</div>
+		    	</form>
+		    </div>
+		    
+		    
+		    
+		    
+		    
+		    
+		    
 		<script type="text/javascript">
 			mui.init();
-			mui.plusReady(function(){   
-//				侧滑加滚动
-				mui(".mui-scroll-wrapper").scroll({
-				deceleration : 0.0005
-				});
-			})
+		
 		</script>
 	</body>
 
