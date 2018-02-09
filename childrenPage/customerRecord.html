@@ -10,12 +10,46 @@
 
 	<body>
 		<script src="../js/mui.min.js"></script>
+		<script src="../js/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vintage.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init()
 		</script>
 		<header class="mui-bar mui-bar-nav">
 			<h1 class="mui-title">我的患者</h1>
 		</header>
+		 <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" class="mui-content" style="width: 100%;height:400px;">
+    	
+    </div>
+    <script type="text/javascript">
+    	// 基于准备好的dom，初始化echarts实例
+    	var myChart = echarts.init(document.getElementById('main'),'vintage'); 
+    	// 指定图表的配置项和数据
+    	 var arrCount = [500, 2000, 3600, 1000];  
+        var option = {
+            title: {
+                text: 'ECharts能力展示'
+            },
+            tooltip: {},
+            legend: {
+                data:['随访人次']
+            },
+            xAxis: {
+            	type : 'category',
+                data: ["一季度","二季度","三季度","四季度"]
+            },
+            yAxis: {},
+            series: [{
+                name: '随访人次',
+                type: 'bar',
+                data: arrCount
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
 	</body>
 
 </html>

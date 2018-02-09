@@ -43,7 +43,7 @@
 	<body>
 		
 		
-		<div class="mui-off-canvas-wrap mui-draggable mui-scalable">
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-scalable">
 		  <!-- 菜单容器 -->
 		  <aside class="mui-off-canvas-left mui-transitioning" id="offCanvasSide">
 		    <div class="mui-scroll-wrapper">
@@ -55,38 +55,38 @@
 							<span class="android-only">；4.Android手机按back键；5.Android手机按menu键
 							</span>。
 							<p style="margin: 10px 15px;">
-								<button id="offCanvasHide" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="padding: 5px 20px;">关闭侧滑菜单</button>
+								<button id="offCanvasHide" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="padding: 5px 20px;">一键筛查</button>
 							</p>
 						<div class="title" style="margin-bottom: 25px;">侧滑列表示例</div>
 						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
 							<li class="mui-table-view-cell">
 								<a class="mui-navigate-right">
-									Item 1
+									条件1
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a class="mui-navigate-right">
-									Item 2
+									条件2
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a class="mui-navigate-right">
-									Item 3
+									条件3
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a class="mui-navigate-right">
-									Item 4
+									条件4
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a class="mui-navigate-right">
-									Item 5
+									条件5
 								</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a class="mui-navigate-right">
-									Item 6
+									条件6
 								</a>
 							</li>
 						</ul>
@@ -141,7 +141,7 @@
 						<a class="mui-btn mui-btn-red">删除</a>
 					</div>
 					<div class="mui-slider-handle mui-table">
-						<div class="mui-table-cell">
+						<div class="mui-table-cell" style="color: orangered;">
 							左滑自动触发删除
 						</div>
 
@@ -307,16 +307,20 @@
 				var btnArray = ['确认', '取消'];
 				$('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
 					var elem = this;
-					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+					mui.confirm('确认删除该条记录？', '警告', btnArray, function(e) {
 						if (e.index == 0) {
 							elem.parentNode.removeChild(elem);
 						} else {
 							setTimeout(function() {
 								$.swipeoutClose(elem);
-							}, 0);
+							}, 100); //点击取消时
 						}
 					});
 				});
+			var offCanvasWrapper = mui('#offCanvasWrapper');
+			document.getElementById('offCanvasHide').addEventListener('tap', function() {
+				offCanvasWrapper.offCanvas('close');
+			});
 })
 		</script>
 	</body>
