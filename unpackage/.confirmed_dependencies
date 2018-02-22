@@ -42,7 +42,9 @@
 			"css/mui.min.css",
 			"js/mui.min.js"
 		],
-		"refer": [],
+		"refer": [
+			"childrenPage/LoginSuccessAfter.html"
+		],
 		"priority": 0
 	}
 }

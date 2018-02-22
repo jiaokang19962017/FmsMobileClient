@@ -128,7 +128,10 @@
 					var inputusername=document.getElementById('account').value;
 					var inputuserpassword = document.getElementById('password').value;
 					if(inputusername==username&&inputuserpassword==userpassword){
-						alert("正确");
+						mui.openWindow({
+							url:'LoginSuccessAfter.html',
+							id:'LoginSuccessAfter.html'
+						})
 					}else{
 						alert("错误");
 					}

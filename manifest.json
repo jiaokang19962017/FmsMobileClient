@@ -243,7 +243,10 @@
 					"fonts/mui.ttf",
 					"js/mui.min.js"
 				],
-				"priority": 2
+				"priority": 2,
+				"refer": [
+					"childrenPage/LoginSuccessAfter.html"
+				]
 			}
 		},
 		"idle": {
