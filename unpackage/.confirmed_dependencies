@@ -7,7 +7,8 @@
 			"AjaxServlet.html",
 			"childrenPage/myCenter.html",
 			"childrenPage/customerRecord.html",
-			"childrenPage/fmsMainPage.html"
+			"childrenPage/fmsMainPage.html",
+			"childrenPage/dataAnalysis.html"
 		],
 		"resources": [
 			"childrenPage/fmsMainPage.html",
@@ -46,5 +47,15 @@
 			"childrenPage/LoginSuccessAfter.html"
 		],
 		"priority": 0
+	},
+	"childrenPage/dataAnalysis.html": {
+		"refer": [
+			"childrenPage/customerRecord.html",
+			"childrenPage/echarts.html"
+		],
+		"resources": [
+			"childrenPage/customerRecord.html",
+			"childrenPage/echarts.html"
+		]
 	}
 }

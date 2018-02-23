@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<!--
+	作者：焦康
+	时间：2018-02-23
+	描述：图表页面以及上部导航切换
+-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			.title_css{
+				border: 1px solid dodgerblue;
+				padding: 0px;
+				border-radius: 5px;
+				background-color: dodgerblue;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body id="body_main">
+		<script src="../js/mui.js"></script>
+		<script src="../js/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/vintage.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<h1 id="picture-btn" class="mui-title"><span id="title_1">数据分析</span>&nbsp;<span id="title_2">客户档案</span></h1>
+		</header>
+		 <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+		 
+	</body>
+	<script type="text/javascript">
+		mui.init();
+		var subpages = ['echarts.html', 'customerRecord.html'];
+			var subpage_style = {
+				top: '45px',
+				bottom: '51px'
+			};
+		var aniShow = {};
+		mui.plusReady(function(){
+		var self = plus.webview.currentWebview();
+				for (var i = 0; i < 2; i++) {
+					var temp = {};
+					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					if (i > 0) {
+						sub.hide();
+					}else{
+						temp[subpages[i]] = "true";
+						mui.extend(aniShow,temp);
+					}
+					self.append(sub);
+				}	
+		var activeTab = subpages[1];
+		var firstTab = subpages[0];
+		var title_1 = document.getElementById('title_1');
+		var title_2 = document.getElementById('title_2');
+		title_1.classList.add('title_css');
+		title_1.addEventListener('tap',function(){
+			title_1.classList.add('title_css');
+			title_2.classList.remove('title_css');
+			plus.webview.show(firstTab);
+		})
+		title_2.addEventListener('tap',function(){
+			title_2.classList.add('title_css')
+			title_1.classList.remove('title_css');
+			plus.webview.show(activeTab);
+})
+});
+mui.back = function() {
+	var btnArray = ['是', '否'];
+	mui.confirm('是否退出应用', '提示', btnArray, function(e) {
+		if(e.index == 0) {
+			plus.runtime.quit();
+		}
+	})
+}
+	</script>
+</html>

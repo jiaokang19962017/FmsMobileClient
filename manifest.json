@@ -211,7 +211,7 @@
 					"AjaxServlet.html",
 					"childrenPage/myCenter.html",
 					"childrenPage/customerRecord.html",
-					"childrenPage/fmsMainPage.html"
+					"childrenPage/dataAnalysis.html"
 				],
 				"priority": 0
 			},
@@ -247,6 +247,14 @@
 				"refer": [
 					"childrenPage/LoginSuccessAfter.html"
 				]
+			},
+			"childrenPage/dataAnalysis.html": {
+				"resources": [
+					"childrenPage/customerRecord.html",
+					"childrenPage/echarts.html"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
