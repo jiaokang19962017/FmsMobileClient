@@ -1,6 +1,10 @@
 <!doctype html>
 <html>
-
+	<!--
+    	作者：焦康
+    	时间：2018-02-23
+    	描述：待随访患者列表以及侧滑显示页面
+    -->
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
@@ -290,14 +294,10 @@
 				}
 				})
 			mui.plusReady(function() {
-			mui(".mui-table-view").on('longtap','.mui-navigate-right',function(e){
-				var tex =this.innerText
-				alert("你长按了"+tex);
-			});
-			mui(".mui-table-view").on('tap','.mui-navigate-right',function(e){
-				var tex =this.innerText
-				alert("你点击了"+tex);
-			});
+//			mui(".mui-table-view").on('longtap','.mui-navigate-right',function(e){
+//				var tex =this.innerText
+//				alert("你长按了"+tex);
+//			});
 			mui(".mui-scroll-wrapper").scroll({
 				deceleration : 0.0005    //侧滑+列表滚动时间
 				});

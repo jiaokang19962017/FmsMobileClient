@@ -1,6 +1,10 @@
 <!doctype html>
 <html>
-
+	<!--
+    	作者：焦康
+    	时间：2018-02-23
+    	描述：登录页面
+    -->
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
@@ -137,6 +141,15 @@
 					}
 				})
 			})
+						mui.back = function() {
+	var btnArray = ['是', '否'];
+	mui.confirm('是否退出应用', '提示', btnArray, function(e) {
+		if(e.index == 0) {
+			plus.runtime.quit();
+		}
+	})
+	}
+	
 		</script>
 	</body>
 
