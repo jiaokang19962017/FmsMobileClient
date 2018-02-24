@@ -251,9 +251,12 @@
 			"childrenPage/dataAnalysis.html": {
 				"resources": [
 					"childrenPage/customerRecord.html",
-					"childrenPage/echarts.html"
+					"childrenPage/echarts.html",
+					"childrenPage/customerList.html"
 				],
-				"refer": [],
+				"refer": [
+					"childrenPage/aboutMe.html"
+				],
 				"priority": 0
 			}
 		},

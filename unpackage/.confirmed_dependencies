@@ -51,11 +51,14 @@
 	"childrenPage/dataAnalysis.html": {
 		"refer": [
 			"childrenPage/customerRecord.html",
-			"childrenPage/echarts.html"
+			"childrenPage/echarts.html",
+			"childrenPage/aboutMe.html",
+			"childrenPage/customerList.html"
 		],
 		"resources": [
 			"childrenPage/customerRecord.html",
-			"childrenPage/echarts.html"
+			"childrenPage/echarts.html",
+			"childrenPage/customerList.html"
 		]
 	}
 }
