@@ -190,7 +190,7 @@
                     "mdpi": "", /*普通屏启动图片，分辨率：240x282*/
                     "ldpi": ""/*1080P高分屏启动图片，分辨率：1080x1882*/
                 }
-            }
+            },"debug":true
         }
     },
 	"dependencies": {
@@ -222,7 +222,10 @@
 					"fonts/mui.ttf",
 					"js/mui.min.js"
 				],
-				"priority": 0
+				"priority": 0,
+				"refer": [
+					"childrenPage/fmsDetailPage.html"
+				]
 			},
 			"childrenPage/customerRecord.html": {
 				"href": "childrenPage/customerRecord.html",
@@ -272,5 +275,5 @@
 				"README.md"
 			]
 		}
-	}
+	},"fullscreen":true
 }

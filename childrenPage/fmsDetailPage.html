@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+	<!--
+    	作者：811708046@qq.com
+    	时间：2018-02-24
+    	描述：随访界面
+    -->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+	</head>
+
+	<body>
+		<script src="../js/mui.min.js"></script>
+		 <header class="mui-bar mui-bar-nav">
+		      <a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" href="#offCanvasSide"></a>
+		      <a class="mui-icon iconfont icon-addition mui-pull-right" href="#offCanvasSide"></a>
+		      <h1 class="mui-title"></h1>
+		    </header>
+		    <div class="mui-content">
+		    	<div class="mui-card">
+		    		<ul class="mui-table-view">
+		    		    <li class="mui-table-view-cell mui-media">
+		    		        <a href="javascript:;">
+		    		            <img class="mui-media-object mui-pull-right">
+		    		            <div class="mui-media-body">
+		    		                	就诊号:
+		    		                <p class="mui-ellipsis">0000001</p>
+		    		            </div>
+		    		        </a>
+		    		    </li>
+		    		    <li class="mui-table-view-cell mui-media">
+		    		        <a href="javascript:;">
+		    		            <img class="mui-media-object mui-pull-right">
+		    		            <div class="mui-media-body">
+		    		                姓名:
+		    		                <p class="mui-ellipsis" id="fms-name"></p>
+		    		            </div>
+		    		        </a>
+		    		    </li>
+		    		    <li class="mui-table-view-cell mui-media">
+		    		        <a href="javascript:;">
+		    		            <img class="mui-media-object mui-pull-right">
+		    		            <div class="mui-media-body">
+		    		                性别:
+		    		                <p class="mui-ellipsis">男</p>
+		    		            </div>
+		    		        </a>
+		    		    </li>
+		    		    <li class="mui-table-view-cell mui-media">
+		    		        <a href="javascript:;">
+		    		            <img class="mui-media-object mui-pull-right">
+		    		            <div class="mui-media-body">
+		    		                年龄:
+		    		                <p class="mui-ellipsis">38</p>
+		    		            </div>
+		    		        </a>
+		    		    </li>
+		    		    <li class="mui-table-view-cell mui-media">
+		    		        <a href="javascript:;">
+		    		            <img class="mui-media-object mui-pull-right">
+		    		            <div class="mui-media-body" id="cus-tel">
+		    		                联系电话:
+		    		                <p class="mui-ellipsis" id="cus-telphone">12345678901</p>
+		    		            </div>
+		    		        </a>
+		    		    </li>
+		    		    <li class="mui-table-view-cell mui-media">
+		    		        <a href="javascript:;">
+		    		            <img class="mui-media-object mui-pull-right">
+		    		            <div class="mui-media-body">
+		    		                科室:
+		    		                <p class="mui-ellipsis">肿瘤科</p>
+		    		            </div>
+		    		        </a>
+		    		    </li>
+		    		</ul>
+		    	</div>
+		    	<div class="mui-card">
+		    		<div class="mui-card">
+		    			<div class="mui-input-row">
+		    			    <label>随访记录</label>
+		    			    <input type="text" placeholder="在此填写随访记录">
+		    			</div>
+		    			
+		    		</div>
+		    		<div class="mui-card">			
+    <li class="mui-table-view-cell" style="list-style-type: none;">满意度</li>
+		    			<div class="mui-input-row mui-radio ">
+		    			    <label>满意</label>
+		    			    <input name="radio1" type="radio">
+		    			</div>
+		    			<div class="mui-input-row mui-radio ">
+		    			    <label>不满意</label>
+		    			    <input name="radio1" type="radio">
+		    			</div>
+		    			<div class="mui-input-row mui-radio ">
+		    			    <label>一般</label>
+		    			    <input name="radio1" type="radio">
+		    			</div>
+		    			
+		    		</div>
+		    		<div class="mui-card">
+		    			 <li class="mui-table-view-cell" style="list-style-type: none;">治疗环境</li>
+		    			<div class="mui-input-row mui-radio ">
+		    			    <label>满意</label>
+		    			    <input name="radio2" type="radio">
+		    			</div>
+		    			<div class="mui-input-row mui-radio ">
+		    			    <label>一般</label>
+		    			    <input name="radio2" type="radio">
+		    			</div>
+		    			<div class="mui-input-row mui-radio ">
+		    			    <label>不满意</label>
+		    			    <input name="radio2" type="radio">
+		    			</div>
+		    		</div>
+		    		
+		    	</div>
+		    </div>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			})
+			mui.plusReady(function(){
+				var sData = plus.webview.currentWebview();  // 接收通过extras传来的参数
+				var name = mui('.mui-title');
+				var fmsname = mui('#fms-name')
+				name[0].innerHTML=sData.name;
+				fmsname[0].innerHTML=sData.name
+				var teltap = document.getElementById('cus-tel');
+				teltap.addEventListener("tap",function(){
+					 var btnArray=['拨打','取消'];
+             		 var phone=document.getElementById('cus-telphone')
+            		 mui.confirm('是否拨打'+phone.innerHTML+'?','提示',btnArray,function(e){
+                if(e.index == 0){
+                    plus.device.dial(phone.innerHTML,false);
+                }
+            });
+				})
+			});
+		</script>
+	</body>
+
+</html>

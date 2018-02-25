@@ -126,16 +126,15 @@
 		<script type="text/javascript">
 			mui.init();
 			mui.plusReady(function(){
-				var username="jiaokang";
-				var userpassword="jiaokang520";
+				var username="123";
+				var userpassword="123";
 				document.getElementById('login').addEventListener("tap",function(){
 					var inputusername=document.getElementById('account').value;
 					var inputuserpassword = document.getElementById('password').value;
 					if(inputusername==username&&inputuserpassword==userpassword){
-						mui.openWindow({
-							url:'LoginSuccessAfter.html',
-							id:'LoginSuccessAfter.html'
-						})
+						//获取父页面index.html
+                    alert("成功");
+                    alert(main);
 					}else{
 						alert("错误");
 					}

@@ -126,7 +126,6 @@
 			            <a class="mui-navigate-right">
 			                刘兰芬
 			            </a>
-			             <span class="mui-badge mui-badge-danger">5</span>
 			        </li>
 			        <li class="mui-table-view-cell">
 			            <a class="mui-navigate-right">
@@ -156,12 +155,13 @@
 			            <a class="mui-navigate-right" href="aboutMe.html">
 			                李玉美
 			            </a>
-			            <span class="mui-badge mui-badge-success">1</span>
+			            
 			        </li>
 			        <li class="mui-table-view-cell">
 			            <a class="mui-navigate-right">
 			                 张克军
 			            </a>
+			            
 			        </li>
 			        <li class="mui-table-view-cell">
 			            <a class="mui-navigate-right">
@@ -294,12 +294,21 @@
 				}
 				})
 			mui.plusReady(function() {
-//			mui(".mui-table-view").on('longtap','.mui-navigate-right',function(e){
-//				var tex =this.innerText
-//				alert("你长按了"+tex);
-//			});
+			mui(".mui-table-view").on('tap','.mui-navigate-right',function(e){
+				var tex =this.innerText
+				
+				mui.openWindow({
+					url : "fmsDetailPage.html",
+					id : "fmsDetailPage.html",
+					extras:{name:tex}    // 通过extras传参数
+				});
+			});
+			mui(".mui-table-view").on('longtap','.mui-navigate-right',function(e){
+				var tex =this.innerText
+				mui.alert(tex,"患者信息")
+			});
 			mui(".mui-scroll-wrapper").scroll({
-				deceleration : 0.0005    //侧滑+列表滚动时间
+				deceleration : 0.0005   //侧滑+列表滚动系数
 				});
 			
 			})
