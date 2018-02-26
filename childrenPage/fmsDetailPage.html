@@ -9,8 +9,13 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/mui.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<style type="text/css">
+			.cus-list-detail{
+				color: dodgerblue;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -23,61 +28,26 @@
 		    <div class="mui-content">
 		    	<div class="mui-card">
 		    		<ul class="mui-table-view">
-		    		    <li class="mui-table-view-cell mui-media">
-		    		        <a href="javascript:;">
-		    		            <img class="mui-media-object mui-pull-right">
-		    		            <div class="mui-media-body">
-		    		                	就诊号:
-		    		                <p class="mui-ellipsis">0000001</p>
-		    		            </div>
-		    		        </a>
-		    		    </li>
-		    		    <li class="mui-table-view-cell mui-media">
-		    		        <a href="javascript:;">
-		    		            <img class="mui-media-object mui-pull-right">
-		    		            <div class="mui-media-body">
-		    		                姓名:
-		    		                <p class="mui-ellipsis" id="fms-name"></p>
-		    		            </div>
-		    		        </a>
-		    		    </li>
-		    		    <li class="mui-table-view-cell mui-media">
-		    		        <a href="javascript:;">
-		    		            <img class="mui-media-object mui-pull-right">
-		    		            <div class="mui-media-body">
-		    		                性别:
-		    		                <p class="mui-ellipsis">男</p>
-		    		            </div>
-		    		        </a>
-		    		    </li>
-		    		    <li class="mui-table-view-cell mui-media">
-		    		        <a href="javascript:;">
-		    		            <img class="mui-media-object mui-pull-right">
-		    		            <div class="mui-media-body">
-		    		                年龄:
-		    		                <p class="mui-ellipsis">38</p>
-		    		            </div>
-		    		        </a>
-		    		    </li>
-		    		    <li class="mui-table-view-cell mui-media">
-		    		        <a href="javascript:;">
-		    		            <img class="mui-media-object mui-pull-right">
-		    		            <div class="mui-media-body" id="cus-tel">
-		    		                联系电话:
-		    		                <p class="mui-ellipsis" id="cus-telphone">12345678901</p>
-		    		            </div>
-		    		        </a>
-		    		    </li>
-		    		    <li class="mui-table-view-cell mui-media">
-		    		        <a href="javascript:;">
-		    		            <img class="mui-media-object mui-pull-right">
-		    		            <div class="mui-media-body">
-		    		                科室:
-		    		                <p class="mui-ellipsis">肿瘤科</p>
-		    		            </div>
-		    		        </a>
-		    		    </li>
+		    		       <li class="mui-table-view-cell">住院号: <span class="cus-list-detail" id="in-hos-id">
+		    		       	00001
+		    		       </span> </li>
+     					   <li class="mui-table-view-cell">姓名:<span class="cus-list-detail" id="cus-name"></span></li>
+      					   <li class="mui-table-view-cell">性别: <span id="cus-sex" class="cus-list-detail">
+      					   	男
+      					   </span> </li>
+      					    <li class="mui-table-view-cell">科室: <span id="cus-dept" class="cus-list-detail">
+      					    	肿瘤科
+      					    </span> </li>
+     					   <li class="mui-table-view-cell">医师: <span id="doctor-name" class="cus-list-detail">
+     					   	王某某
+     					   </span> </li>
+      					   <li class="mui-table-view-cell">入院时间:<span id="out-hos-date" class="cus-list-detail">2017-02-26</span> </li>
+      					   <li class="mui-table-view-cell">出院时间:<span id="out-hos-date" class="cus-list-detail">2017-02-26</span></li>
+      					   <li class="mui-table-view-cell">电话:<span id="cus-tel" class="cus-list-detail">
+      					   15554723058
+      					   </span> </li>
 		    		</ul>
+		    		
 		    	</div>
 		    	<div class="mui-card">
 		    		<div class="mui-card">
@@ -128,7 +98,7 @@
 			mui.plusReady(function(){
 				var sData = plus.webview.currentWebview();  // 接收通过extras传来的参数
 				var name = mui('.mui-title');
-				var fmsname = mui('#fms-name')
+				var fmsname = mui('#cus-name')
 				name[0].innerHTML=sData.name;
 				fmsname[0].innerHTML=sData.name
 				var teltap = document.getElementById('cus-tel');
