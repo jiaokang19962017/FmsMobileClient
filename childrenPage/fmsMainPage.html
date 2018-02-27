@@ -10,6 +10,7 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
 				<style>
 			html,
 			body {
@@ -95,7 +96,7 @@
 		  <div class="mui-inner-wrap mui-transitioning">
 		    <!-- 主页面标题 -->
 		    <header class="mui-bar mui-bar-nav">
-		      <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-right" href="#topPopover"></a>
+		      <a class="mui-icon iconfont icon-add mui-icon-bars mui-pull-right" href="#topPopover"></a>
 		      <h1 class="mui-title">随访首页</h1>
 		    </header>
 		    
@@ -111,8 +112,7 @@
 			        <li class="mui-table-view-cell">
 			            <a class="mui-navigate-right">
 			                吴桂芳
-			            </a>
-			            
+			            </a>       
 			        </li>
 			        <li class="mui-table-view-cell">
 			            <a class="mui-navigate-right">
@@ -137,7 +137,7 @@
 			        </li>
 			  
 			        <li class="mui-table-view-cell">
-			            <a class="mui-navigate-right" href="aboutMe.html">
+			            <a class="mui-navigate-right">
 			                李玉美
 			            </a>
 			            
@@ -270,36 +270,93 @@
 		<!--
         	作者：811708046@qq.com
         	时间：2018-02-26
-        	描述：弹出
+        	描述：右上角弹出
         -->	
         <div id="topPopover" class="mui-popover">
 			<div class="mui-popover-arrow"></div>
 			
 			<div class="mui-scroll-wrapper">
 				<div class="mui-scroll">
-					<ul class="mui-table-view">
-						<li class="mui-table-view-cell">
-							<a href="#">Item1</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">It</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item3</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item4</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item5</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item6</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item7</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item8</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item9</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="#">Item10</a>
-						</li>
-					</ul>
+					
+					<div class="mui-card">
+						<div class="mui-card">
+						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">患者来源(住院科室)</a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">住院科室
+							</li>
+							<li class="mui-table-view-cell">门诊科室
+							</li>
+						</ul>
+					</li>
+					</div>
+					<div class="mui-card">
+						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a id="date-info" class="mui-navigate-right">出院时间:</a>
+						<ul class="mui-table-view mui-table-view-chevron" id="date-select">
+							<li class="mui-table-view-cell">开始时间
+							</li>
+							<li class="mui-table-view-cell">结束时间
+							</li>
+						</ul>
+					</li>
+					</div>
+					
+					<div class="mui-card">
+						<div class="mui-input-row">
+						    <label>死亡患者</label>
+						    <div class="mui-switch mui-active mui-switch-mini">
+						        <div class="mui-switch-handle"></div>
+						    </div>
+						</div>
+					</div>
+					<div class="mui-card">
+						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">出院科室(全部科室)</a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">ICU
+							</li>
+							<li class="mui-table-view-cell">外五科
+							</li>
+							<li class="mui-table-view-cell">内七科
+							</li>
+							<li class="mui-table-view-cell">中医骨伤科
+							</li>
+							<li class="mui-table-view-cell">内一科
+							</li>
+							<li class="mui-table-view-cell">急诊科
+							</li>
+							<li class="mui-table-view-cell">麻醉手术科
+							</li>
+							<li class="mui-table-view-cell">产科
+							</li>
+							<li class="mui-table-view-cell">妇科
+							</li>
+							<li class="mui-table-view-cell">肾病科
+							</li>
+							
+						</ul>
+					</li>
+					</div>
+					</div>
+					
+					
+					<div class="mui-card">
+						<button type="button" class="mui-btn mui-btn-blue  mui-btn-block">一键筛查</button>
+					</div>
+					
+					
+					<div class="mui-card">
+						<div class="mui-card">
+						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">患者来源(住院科室)</a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">住院科室
+							</li>
+							<li class="mui-table-view-cell">门诊科室
+							</li>
+						</ul>
+					</li>
+					</div>
+				
+					</div>
+					
 				</div>
 			</div>
 
@@ -317,22 +374,43 @@
 				}
 				})
 			mui.plusReady(function() {
-			mui(".mui-table-view").on('tap','.mui-navigate-right',function(e){
+			mui("#OA_task_1").on('tap','.mui-navigate-right',function(e){
 				var tex =this.innerText
-				
 				mui.openWindow({
 					url : "fmsDetailPage.html",
 					id : "fmsDetailPage.html",
 					extras:{name:tex}    // 通过extras传参数
 				});
 			});
-			mui(".mui-table-view").on('longtap','.mui-navigate-right',function(e){
+			mui("#OA_task_1").on('longtap','.mui-navigate-right',function(e){
 				var tex =this.innerText
 				mui.alert(tex,"患者信息")
 			});
 			mui(".mui-scroll-wrapper").scroll({
 				deceleration : 0.0005   //侧滑+列表滚动系数
 				});
+			
+			var info = document.getElementById('date-info')
+			mui("#date-select").on('tap', '.mui-table-view-cell',function() {
+				var dDate = new Date();
+				dDate.setFullYear();
+				var minDate = new Date();
+				minDate.setFullYear();
+				var maxDate = new Date();
+				maxDate.setFullYear();
+				plus.nativeUI.pickDate(function(e) {
+					var d = e.date;
+					info.innerText = '开始日期:' + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+				}, function(e) {
+					info.innerText = "您没有选择日期";
+				}, {
+					title: "请选择日期",
+					date: dDate,
+					minDate: minDate,
+					maxDate: maxDate
+				});
+			})	
+				
 			
 			})
 			(function($) {
