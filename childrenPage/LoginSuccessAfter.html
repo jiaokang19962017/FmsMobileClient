@@ -10,18 +10,56 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			
+		</style>
 	</head>
 
 	<body>
 		<script src="../js/mui.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">个人中心</h1>
+			<h1 class="mui-title">个人信息</h1>
 		</header>
-		<p>登录成功</p>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+				        <li onclick="galleryImg()" class="mui-table-view-cell" style="line-height: 45px;">        
+				                头像
+				            <img class="mui-media-object mui-pull-right" src="../images/headimg.jpg">
+				        </li>
+				        <li class="mui-table-view-cell" style="line-height: 45px;">        
+				         姓名<span style="display: inline-block;float: right;">李医生</span>
+				        </li>
+				         <li class="mui-table-view-cell" style="line-height: 45px;">        
+				         工号<span style="display: inline-block;float: right;">323</span>
+				        </li>
+				         <li class="mui-table-view-cell" style="line-height: 45px;">        
+				         医院<span style="display: inline-block;float: right;">XX县人民医院</span>
+				        </li>
+				          <li class="mui-table-view-cell" style="line-height: 45px;">        
+				         科室<span style="display: inline-block;float: right;">随访中心</span>
+				        </li>
+				    </ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			})
+			function galleryImg(){
+	// 从相册中选择图片
+	//outSet('从相册中选择图片：');
+    plus.gallery.pick(function(path){
+    	outLine(path);
+        //showImg( path );
+        //createItem(path);
+    }, function(e){
+    	//outSet('取消选择图片');
+    }, {filter:'image'});
+}
+		</script>
 	</body>
 
 </html>

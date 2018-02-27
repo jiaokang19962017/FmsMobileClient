@@ -36,8 +36,8 @@
 		    	 	<ul class="mui-table-view">
 					<li class="mui-table-view-cell mui-media">
 						<a href="javascript:;">
-							<img class="mui-media-object mui-pull-right" src="../images/headimg.jpg">
-							<div class="mui-media-body">
+							<img class="mui-media-object mui-pull-right" style="width: 50px;" src="../images/headimg.jpg">
+							<div class="mui-media-body" id="doctor-info">
 								李医生
 								<p class='mui-ellipsis'>XX县人民医院</p>
 							</div>
@@ -64,12 +64,12 @@
 				<ul class="mui-table-view">
 				        <li class="mui-table-view-cell">
 				            <a class="mui-navigate-right">
-				                收藏
+				                消息提醒方式
 				            </a>
 				        </li>
 				        <li class="mui-table-view-cell">
 				            <a class="mui-navigate-right">
-				                 通知
+				                 电话拨号方式
 				            </a>
 				        </li>
 				        <li class="mui-table-view-cell">
@@ -99,7 +99,7 @@
 				<ul class="mui-table-view">
 				        <li class="mui-table-view-cell">
 				            <a class="mui-navigate-right">
-				                设置
+				                退出登录
 				            </a>
 				        </li>
 				    </ul>
@@ -110,7 +110,14 @@
 		<script type="text/javascript">
 			mui.init();
 			mui.plusReady(function(){
-				
+				var doctorinfo = document.getElementById('doctor-info');
+				doctorinfo.addEventListener('tap',function(){
+					mui.openWindow({
+					url : "LoginSuccessAfter.html",
+					id : "LoginSuccessAfter.html"
+					   // 通过extras传参数
+				});
+				})
 			})
 	mui.back = function() {
 	var btnArray = ['是', '否'];

@@ -339,7 +339,7 @@
 					
 					
 					<div class="mui-card">
-						<button type="button" class="mui-btn mui-btn-blue  mui-btn-block">一键筛查</button>
+						<button id="one-step" type="button" class="mui-btn mui-btn-blue  mui-btn-block">一键筛查</button>
 					</div>
 					
 					
@@ -386,6 +386,13 @@
 				var tex =this.innerText
 				mui.alert(tex,"患者信息")
 			});
+			
+			var onestep = document.getElementById('one-step')
+			onestep.addEventListener('tap',function(){
+				mui.back();
+				mui.toast("点击了一键筛查")
+			})
+			
 			mui(".mui-scroll-wrapper").scroll({
 				deceleration : 0.0005   //侧滑+列表滚动系数
 				});

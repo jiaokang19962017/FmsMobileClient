@@ -22,7 +22,7 @@
 		<script src="../js/mui.min.js"></script>
 		 <header class="mui-bar mui-bar-nav">
 		      <a class="mui-icon mui-action-back mui-icon-left-nav mui-pull-left" href="#offCanvasSide"></a>
-		      <a class="mui-icon iconfont icon-addition mui-pull-right" href="#offCanvasSide"></a>
+		      <a class="mui-icon iconfont icon-success mui-pull-right" id="saveTable" href="#offCanvasSide"></a>
 		      <h1 class="mui-title"></h1>
 		    </header>
 		    <div class="mui-content">
@@ -111,6 +111,13 @@
                 }
             });
 				})
+				
+				var saveTable = document.getElementById("saveTable");
+				saveTable.addEventListener('tap',function(){
+					mui.toast("保存成功")
+					//mui.back();
+				})
+
 			});
 		</script>
 	</body>
