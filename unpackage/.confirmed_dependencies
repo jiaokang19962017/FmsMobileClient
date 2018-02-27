@@ -8,7 +8,8 @@
       "childrenPage/myCenter.html",
       "childrenPage/customerRecord.html",
       "childrenPage/fmsMainPage.html",
-      "childrenPage/dataAnalysis.html"
+      "childrenPage/dataAnalysis.html",
+      "guide.html"
     ],
     "resources": [
       "childrenPage/fmsMainPage.html",
@@ -61,6 +62,17 @@
       "childrenPage/customerRecord.html",
       "childrenPage/echarts.html",
       "childrenPage/customerList.html"
+    ]
+  },
+  "guide.html": {
+    "refer": [
+      "index.html"
+    ]
+  },
+  "main.html": {
+    "refer": [
+      "index.html",
+      "guide.html"
     ]
   }
 }

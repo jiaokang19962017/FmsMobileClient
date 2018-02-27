@@ -10,7 +10,7 @@
     "icons": {
         "72": "icon.png"
     },
-    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "launch_path": "main.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
     "developer": {
         "name": "焦康",/*开发者名称*/
         "email": "811708046@qq.com",/*开发者邮箱地址*/
@@ -103,8 +103,8 @@
     },
     "plus": {
         "splashscreen": {
-            "autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
-            "waiting": false,"delay":"2000"/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
+            "autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting": false,"delay":"0"/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
         },
         "popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
         "runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
@@ -202,7 +202,8 @@
 					"fonts/mui.ttf",
 					"css/iconfont.css",
 					"fonts/iconfont.ttf",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"js/mui.js"
 				],
 				"refer": [
 					"AboutMe/aboutMe.html",
@@ -211,7 +212,8 @@
 					"AjaxServlet.html",
 					"childrenPage/myCenter.html",
 					"childrenPage/customerRecord.html",
-					"childrenPage/dataAnalysis.html"
+					"childrenPage/dataAnalysis.html",
+					"guide.html"
 				],
 				"priority": 0
 			},
@@ -220,7 +222,11 @@
 				"resources": [
 					"css/mui.min.css",
 					"fonts/mui.ttf",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"css/mui.css",
+					"fonts/iconfont.css",
+					"fonts/iconfont.ttf",
+					"js/mui.js"
 				],
 				"priority": 0,
 				"refer": [
@@ -232,7 +238,9 @@
 				"resources": [
 					"css/mui.min.css",
 					"fonts/mui.ttf",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"css/mui.css",
+					"js/mui.js"
 				],
 				"priority": 1,
 				"refer": [
@@ -244,7 +252,10 @@
 				"resources": [
 					"css/mui.min.css",
 					"fonts/mui.ttf",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"css/mui.css",
+					"js/mui.js",
+					"images/headimg.jpg"
 				],
 				"priority": 2,
 				"refer": [
@@ -255,25 +266,80 @@
 				"resources": [
 					"childrenPage/customerRecord.html",
 					"childrenPage/echarts.html",
-					"childrenPage/customerList.html"
+					"childrenPage/customerList.html",
+					"css/mui.css",
+					"fonts/mui.ttf",
+					"js/mui.js",
+					"js/echarts.js",
+					"js/vintage.js"
 				],
 				"refer": [
 					"childrenPage/aboutMe.html"
+				],
+				"priority": 0
+			},
+			"childrenPage/fmsDetailPage.html": {
+				"href": "childrenPage/fmsDetailPage.html",
+				"resources": [
+					"css/mui.css",
+					"fonts/mui.ttf",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf",
+					"js/mui.min.js"
+				],
+				"priority": 0
+			},
+			"childrenPage/customerList.html": {
+				"href": "childrenPage/customerList.html",
+				"resources": [
+					"css/mui.css",
+					"fonts/mui.ttf",
+					"js/mui.min.js",
+					"images/heart.png"
+				],
+				"priority": 1
+			},
+			"childrenPage/LoginSuccessAfter.html": {
+				"href": "childrenPage/LoginSuccessAfter.html",
+				"resources": [
+					"css/mui.css",
+					"fonts/mui.ttf",
+					"js/mui.js",
+					"js/common.js",
+					"images/headimg.jpg"
+				],
+				"priority": 2
+			},
+			"guide.html": {
+				"resources": [],
+				"refer": [
+					"index.html"
+				],
+				"priority": 0
+			},
+			"main.html": {
+				"resources": [],
+				"refer": [
+					"index.html",
+					"guide.html"
 				],
 				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
-				"fonts/iconfont.css",
-				"icon/sincerity.png",
-				"js/vue.js",
 				"css/iconfont.ttf",
+				"js/vue.js",
+				"images/splash480x762.png",
 				"images/about-1.jpg",
-				"js/mui.js",
-				"css/mui.css",
+				"images/splash1080x1882.png",
+				"images/splash720x1242.png",
 				"README.md"
 			]
 		}
-	},"fullscreen":true
+	},"fullscreen":true,
+	"unpackage":[
+	  "README.md",
+	  "js/vue.js"
+	]
 }

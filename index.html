@@ -38,6 +38,7 @@
 		<script type="text/javascript">
 			mui.init()
 			mui.plusReady(function(){
+			plus.navigator.closeSplashscreen();
 			 var self = plus.webview.currentWebview();
 			 var current = '';
 			 var styles = {
@@ -79,7 +80,8 @@
                 });
                 //解决安卓系统键盘弹出时会顶起底部导航按钮
                 //ios键盘默认最高层,无需处理
-                document.getElementById('bar').style.top = (plus.display.resolutionHeight - 50) + "px";     
+                document.getElementById('bar').style.top = (plus.display.resolutionHeight - 50) + "px";
+                 
 			})
 			mui.back = function() {
 			var btnArray = ['是', '否'];
