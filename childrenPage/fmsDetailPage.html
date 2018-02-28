@@ -43,9 +43,7 @@
      					   </span> </li>
       					   <li class="mui-table-view-cell">入院时间:<span id="out-hos-date" class="cus-list-detail">2017-02-26</span> </li>
       					   <li class="mui-table-view-cell">出院时间:<span id="out-hos-date" class="cus-list-detail">2017-02-26</span></li>
-      					   <li class="mui-table-view-cell">电话:<span id="cus-tel" class="cus-list-detail">
-      					   15554723058
-      					   </span> </li>
+      					   <li id="custelcall" class="mui-table-view-cell">电话:<span id="cus-tel" class="cus-list-detail">15554723058</span> </li>
 		    		</ul>
 		    		
 		    	</div>
@@ -101,10 +99,13 @@
 				var fmsname = mui('#cus-name')
 				name[0].innerHTML=sData.name;
 				fmsname[0].innerHTML=sData.name
+				
+				
+				//点击电话号码进行拨号尝试
 				var teltap = document.getElementById('cus-tel');
 				teltap.addEventListener("tap",function(){
 					 var btnArray=['拨打','取消'];
-             		 var phone=document.getElementById('cus-telphone')
+             		 var phone=document.getElementById('cus-tel')
             		 mui.confirm('是否拨打'+phone.innerHTML+'?','提示',btnArray,function(e){
                 if(e.index == 0){
                     plus.device.dial(phone.innerHTML,false);
@@ -114,8 +115,8 @@
 				
 				var saveTable = document.getElementById("saveTable");
 				saveTable.addEventListener('tap',function(){
+					mui.back();
 					mui.toast("保存成功")
-					//mui.back();
 				})
 
 			});

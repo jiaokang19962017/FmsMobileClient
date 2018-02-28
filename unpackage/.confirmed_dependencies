@@ -1,84 +1,84 @@
 {
-	"index.html": {
-		"refer": [
-			"AboutMe/aboutMe.html",
-			"ScreenPage/HospitalScreen.html",
-			"ajax.html",
-			"AjaxServlet.html",
-			"childrenPage/myCenter.html",
-			"childrenPage/customerRecord.html",
-			"childrenPage/fmsMainPage.html",
-			"childrenPage/dataAnalysis.html",
-			"guide.html"
-		],
-		"resources": [
-			"childrenPage/fmsMainPage.html",
-			"css/mui.min.css",
-			"css/iconfont.css",
-			"js/mui.min.js"
-		]
-	},
-	"childrenPage/fmsMainPage.html": {
-		"href": "childrenPage/fmsMainPage.html",
-		"resources": [
-			"css/mui.min.css",
-			"js/mui.min.js"
-		],
-		"refer": [
-			"childrenPage/fmsDetailPage.html"
-		],
-		"priority": 0
-	},
-	"childrenPage/customerRecord.html": {
-		"href": "childrenPage/customerRecord.html",
-		"resources": [
-			"css/mui.min.css",
-			"js/mui.min.js"
-		],
-		"refer": [
-			"childrenPage/aboutMe.html"
-		],
-		"priority": 0
-	},
-	"childrenPage/myCenter.html": {
-		"href": "childrenPage/myCenter.html",
-		"resources": [
-			"css/mui.min.css",
-			"js/mui.min.js"
-		],
-		"refer": [
-			"childrenPage/LoginSuccessAfter.html",
-			"childrenPage/aboutMe.html"
-		],
-		"priority": 0
-	},
-	"childrenPage/dataAnalysis.html": {
-		"refer": [
-			"childrenPage/customerRecord.html",
-			"childrenPage/echarts.html",
-			"childrenPage/aboutMe.html",
-			"childrenPage/customerList.html"
-		],
-		"resources": [
-			"childrenPage/customerRecord.html",
-			"childrenPage/echarts.html",
-			"childrenPage/customerList.html"
-		]
-	},
-	"guide.html": {
-		"refer": [
-			"index.html"
-		]
-	},
-	"main.html": {
-		"refer": [
-			"index.html",
-			"guide.html"
-		]
-	},
-	"childrenPage/aboutMe.html": {
-		"refer": [
-			"childrenPage/myCenter.html"
-		]
-	}
+  "index.html": {
+    "refer": [
+      "AboutMe/aboutMe.html",
+      "ScreenPage/HospitalScreen.html",
+      "ajax.html",
+      "AjaxServlet.html",
+      "childrenPage/myCenter.html",
+      "childrenPage/customerRecord.html",
+      "childrenPage/fmsMainPage.html",
+      "childrenPage/dataAnalysis.html",
+      "guide.html"
+    ],
+    "resources": [
+      "childrenPage/fmsMainPage.html",
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "js/mui.min.js"
+    ]
+  },
+  "childrenPage/fmsMainPage.html": {
+    "href": "childrenPage/fmsMainPage.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "childrenPage/fmsDetailPage.html"
+    ],
+    "priority": 0
+  },
+  "childrenPage/customerRecord.html": {
+    "href": "childrenPage/customerRecord.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "childrenPage/aboutMe.html"
+    ],
+    "priority": 0
+  },
+  "childrenPage/myCenter.html": {
+    "href": "childrenPage/myCenter.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "childrenPage/LoginSuccessAfter.html",
+      "childrenPage/aboutMe.html"
+    ],
+    "priority": 0
+  },
+  "childrenPage/dataAnalysis.html": {
+    "refer": [
+      "childrenPage/customerRecord.html",
+      "childrenPage/echarts.html",
+      "childrenPage/aboutMe.html",
+      "childrenPage/customerList.html"
+    ],
+    "resources": [
+      "childrenPage/customerRecord.html",
+      "childrenPage/echarts.html",
+      "childrenPage/customerList.html"
+    ]
+  },
+  "guide.html": {
+    "refer": [
+      "index.html"
+    ]
+  },
+  "main.html": {
+    "refer": [
+      "index.html",
+      "guide.html"
+    ]
+  },
+  "childrenPage/aboutMe.html": {
+    "refer": [
+      "childrenPage/myCenter.html"
+    ]
+  }
 }
