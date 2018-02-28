@@ -259,7 +259,8 @@
 				],
 				"priority": 2,
 				"refer": [
-					"childrenPage/LoginSuccessAfter.html"
+					"childrenPage/LoginSuccessAfter.html",
+					"childrenPage/aboutMe.html"
 				]
 			},
 			"childrenPage/dataAnalysis.html": {
@@ -322,6 +323,13 @@
 				"refer": [
 					"index.html",
 					"guide.html"
+				],
+				"priority": 0
+			},
+			"childrenPage/aboutMe.html": {
+				"resources": [],
+				"refer": [
+					"childrenPage/myCenter.html"
 				],
 				"priority": 0
 			}

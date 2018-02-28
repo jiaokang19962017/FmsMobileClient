@@ -280,12 +280,10 @@
 					
 					<div class="mui-card">
 						<div class="mui-card">
-						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">患者来源(住院科室)</a>
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell">住院科室
-							</li>
-							<li class="mui-table-view-cell">门诊科室
-							</li>
+						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">患者来源(<span id="cusSource">住院科室</span>)</a>
+						<ul class="mui-table-view mui-table-view-chevron" id="cusSourceSelect">
+							<li class="mui-table-view-cell">住院科室</li>
+							<li class="mui-table-view-cell">门诊科室</li>
 						</ul>
 					</li>
 					</div>
@@ -308,30 +306,29 @@
 						    </div>
 						</div>
 					</div>
+					
 					<div class="mui-card">
-						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">出院科室(全部科室)</a>
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell">ICU
-							</li>
-							<li class="mui-table-view-cell">外五科
-							</li>
-							<li class="mui-table-view-cell">内七科
-							</li>
-							<li class="mui-table-view-cell">中医骨伤科
-							</li>
-							<li class="mui-table-view-cell">内一科
-							</li>
-							<li class="mui-table-view-cell">急诊科
-							</li>
-							<li class="mui-table-view-cell">麻醉手术科
-							</li>
-							<li class="mui-table-view-cell">产科
-							</li>
-							<li class="mui-table-view-cell">妇科
-							</li>
-							<li class="mui-table-view-cell">肾病科
-							</li>
-							
+						<div class="mui-input-row">
+						    <label>纠纷患者</label>
+						    <div class="mui-switch mui-active mui-switch-mini">
+						        <div class="mui-switch-handle"></div>
+						    </div>
+						</div>
+					</div>
+					
+					<div class="mui-card">
+						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">出院科室(<span id="outHosDept">全部</span>)</a>
+						<ul class="mui-table-view mui-table-view-chevron" id="outHosDeptSelect">
+							<li class="mui-table-view-cell">ICU</li>
+							<li class="mui-table-view-cell">外五科</li>
+							<li class="mui-table-view-cell">内七科</li>
+							<li class="mui-table-view-cell">中医骨伤科</li>
+							<li class="mui-table-view-cell">内一科</li>
+							<li class="mui-table-view-cell">急诊科</li>
+							<li class="mui-table-view-cell">麻醉手术科</li>
+							<li class="mui-table-view-cell">产科</li>
+							<li class="mui-table-view-cell">妇科</li>
+							<li class="mui-table-view-cell">肾病科</li>		
 						</ul>
 					</li>
 					</div>
@@ -341,22 +338,7 @@
 					<div class="mui-card">
 						<button id="one-step" type="button" class="mui-btn mui-btn-blue  mui-btn-block">一键筛查</button>
 					</div>
-					
-					
-					<div class="mui-card">
-						<div class="mui-card">
-						<li class="mui-table-view-cell mui-collapse" style="list-style-type: none;"><a class="mui-navigate-right">患者来源(住院科室)</a>
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell">住院科室
-							</li>
-							<li class="mui-table-view-cell">门诊科室
-							</li>
-						</ul>
-					</li>
-					</div>
-				
-					</div>
-					
+
 				</div>
 			</div>
 
@@ -418,7 +400,19 @@
 					maxDate: maxDate
 				});
 			})	
-				
+			
+			//一键筛查条件修改
+			var cussource = document.getElementById('cusSource');//患者来源
+			var outhosdept = document.getElementById('outHosDept');//出院科室
+			mui('#cusSourceSelect').on('tap','.mui-table-view-cell',function(){
+				cussource.innerHTML=this.innerHTML
+			})
+			mui('#outHosDeptSelect').on('tap','.mui-table-view-cell',function(){
+				outhosdept.innerHTML=this.innerHTML
+			})
+			
+			
+			
 			
 			})
 			(function($) {

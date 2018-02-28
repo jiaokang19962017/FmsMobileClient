@@ -48,12 +48,10 @@
 		    	 	
 		    	 	<div class="mui-card">
 		    	 		<ul class="mui-table-view mui-table-view-chevron">
-		    	 			<li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">肿瘤一科</a>
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell">肿瘤一科
-							</li>
-							<li class="mui-table-view-cell">肿瘤二科
-							</li>
+		    	 			<li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">所属科室(<span id="deptName">肿瘤一科</span>)</a>
+						<ul class="mui-table-view mui-table-view-chevron" id="deptSelect">
+							<li class="mui-table-view-cell">肿瘤一科</li>
+							<li class="mui-table-view-cell">肿瘤二科</li>
 						</ul>
 					</li>
 		    	 		</ul>
@@ -61,36 +59,41 @@
 				
 			</div>
 			<div class="mui-card" style="margin-bottom: 35px;">
-				<ul class="mui-table-view">
-				        <li class="mui-table-view-cell">
+				
+				<ul class="mui-table-view mui-table-view-chevron">
+		    	 			<li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">消息提醒方式(<span id="tipType">普通提醒</span>)</a>
+						<ul class="mui-table-view mui-table-view-chevron" id="tipSelect">
+							<li class="mui-table-view-cell">普通提醒</li>
+							<li class="mui-table-view-cell">特殊提醒</li>
+						</ul>
+					</li>
+		    	</ul>
+		    	
+		    	<ul class="mui-table-view mui-table-view-chevron">
+		    	 			<li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#">电话拨号方式(<span id="callType">呼叫中心转移</span>)</a>
+						<ul class="mui-table-view mui-table-view-chevron" id="callSelect">
+							<li class="mui-table-view-cell">呼叫中心转移</li>
+							<li class="mui-table-view-cell">本机拨号</li>
+						</ul>
+					</li>
+		    	</ul>
+				<div class="mui-input-row">
+						    <label>勿扰模式</label>
+						    <div class="mui-switch mui-active mui-switch-mini">
+						        <div class="mui-switch-handle"></div>
+						    </div>
+						</div>
+						
+						<ul class="mui-table-view">
+				        <li id="aboutme" class="mui-table-view-cell">
 				            <a class="mui-navigate-right">
-				                消息提醒方式
+				                关于我们
 				            </a>
 				        </li>
+				    </ul>
+				    <ul id="update" class="mui-table-view">
 				        <li class="mui-table-view-cell">
-				            <a class="mui-navigate-right">
-				                 电话拨号方式
-				            </a>
-				        </li>
-				        <li class="mui-table-view-cell">
-				            <a class="mui-navigate-right">
-				                 隐私
-				            </a>
-				        </li>
-				        <li class="mui-table-view-cell">
-				            <a class="mui-navigate-right">
-				                通用
-				            </a>
-				        </li>
-				        <li class="mui-table-view-cell">
-				            <a class="mui-navigate-right">
-				                 设备
-				            </a>
-				        </li>
-				        <li class="mui-table-view-cell">
-				            <a class="mui-navigate-right">
-				                 其他
-				            </a>
+				            检查更新
 				        </li>
 				    </ul>
 			</div>
@@ -118,6 +121,36 @@
 					   // 通过extras传参数
 				});
 				})
+				//检查更新
+				var update = document.getElementById("update");
+				update.addEventListener('tap',function(){
+					alert("暂无可用更新")
+				})
+				//关于我们
+				var aboutme = document.getElementById("aboutme");
+				aboutme.addEventListener('tap',function(){
+					mui.openWindow({
+						id:'aboutMe.html',
+						url:'aboutMe.html'
+					})
+				})
+				
+				//下拉选择栏选择后展示对应信息
+				var deptName = document.getElementById('deptName');//所属科室
+				var tipType = document.getElementById('tipType');//消息提醒方式
+				var callType = document.getElementById('callType');//拨号方式
+				mui('#callSelect').on('tap','.mui-table-view-cell',function(){
+					callType.innerHTML=this.innerHTML;
+				})
+				mui('#tipSelect').on('tap','.mui-table-view-cell',function(){
+					tipType.innerHTML=this.innerHTML;
+				})
+				mui('#deptSelect').on('tap','.mui-table-view-cell',function(){
+					deptName.innerHTML=this.innerHTML;
+				})
+				
+				
+				
 			})
 	mui.back = function() {
 	var btnArray = ['是', '否'];
